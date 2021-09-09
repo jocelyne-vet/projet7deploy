@@ -5,6 +5,7 @@ import streamlit as st
 import math
 import sklearn
 import plotly.express as px
+import imblearn
 
 ######################################
 # recupération des données 

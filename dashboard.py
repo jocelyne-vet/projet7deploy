@@ -9,6 +9,7 @@ from PIL import Image
 import sklearn
 import plotly.express as px
 import plotly.graph_objects as go
+import imblearn
 
 #################################################
 
