@@ -41,13 +41,13 @@ def get_data(data, idClient):
 
 @st.cache    
 def getInformationsClient(data, idClient,col):
-    if isinstance(data.at[int(idClient[0]), col], float):
-        if math.isnan(data.at[int(idClient[0]), col]):
+    if isinstance(data.at[int(idClient), col], float):
+        if math.isnan(data.at[int(idClient), col]):
             return "inconnu(e)"
         else:
-            return data.at[int(idClient[0]), col]
+            return data.at[int(idClient), col]
     else:
-        return data.at[int(idClient[0]), col]
+        return data.at[int(idClient), col]
 
 
 
@@ -65,7 +65,7 @@ def load_prediction(data, id, clf):
 def getHistogramme2(data, idClient, col,  mod, title):
     data_bis = data.copy()
     if not mod:
-        val = data_bis.at[int(idClient[0]), col]
+        val = data_bis.at[int(idClient), col]
 
  
         fig = px.histogram(data_bis, x = col, title = title)
@@ -73,7 +73,7 @@ def getHistogramme2(data, idClient, col,  mod, title):
     else:
         col_a = col+"bis"
         data_bis[col_a] = np.abs(round((data_bis[col]/365), 2))
-        val = data_bis.at[int(idClient[0]), col_a]
+        val = data_bis.at[int(idClient), col_a]
 
  
         fig = px.histogram(data_bis, x = col_a, title = title)
@@ -87,4 +87,4 @@ def getHistogramme2(data, idClient, col,  mod, title):
   
 
  
-
+####################################################################################
