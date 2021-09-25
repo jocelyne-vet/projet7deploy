@@ -122,7 +122,7 @@ with resultats :
         st.write("**La profession : **", app.getInformationsClient(data, idClient,"OCCUPATION_TYPE"))
         st.write("**Le revenu : **", app.getInformationsClient(data, idClient,"AMT_INCOME_TOTAL"))
         
-        
+        st.markdown('*Dans les graphiques ci-dessous la ligne verte, en pointillés, représente le client.*') 
         st.plotly_chart(app.getHistogramme2(data, idClient, "DAYS_BIRTH", True, "Distribution: âge des clients"))
         st.plotly_chart(app.getHistogramme2(data, idClient, "DAYS_EMPLOYED",  True, "Distribution: ancienneté des clients"))
         st.plotly_chart(app.getHistogramme2(data, idClient, "AMT_INCOME_TOTAL",  False, "Distribution: revenu des clients"))
@@ -149,7 +149,7 @@ with resultats :
             
             
             
-            st.write("Pour résumer, la caractéristique la plus forte dans l’ensemble de données de ce jeu est le ratio new_credit_to_goods_ratio. Une augmentation de ce ratio d’une unité augmente les chances d’être de classe non solvable d’un facteur de 100 lorsque toutes les autres caractéristiques restent les mêmes.")
+            st.write("Pour résumer, la caractéristique la plus forte dans l’ensemble de données de ce jeu est le ratio new_credit_to_goods_ratio. Une augmentation de ce ratio d’une unité augmente les chances d’être de la classe non solvable d’un facteur de 100 lorsque toutes les autres caractéristiques restent les mêmes.")
 
             st.image('features_imp.png', width=700)
     
